@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LujánTech - Soporte Informático de Precisión</title>
+    <meta name="description" content="Soporte técnico informático personal para hogares y empresas en Luján. Soluciones expertas en hardware, software, redes y más.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdfdfd;
+        }
+        ::selection {
+            background-color: #10b981; /* Verde esmeralda */
+            color: #ffffff;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+            z-index: 100;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.25);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f3f4f6' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .service-card {
+            border-top: 4px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-top-color: #f59e0b; /* Dorado */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <span class="text-2xl font-bold text-slate-900">Luján<span class="text-emerald-500">Tech</span></span>
+            </a>
+            <!-- Navegación -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-slate-600 hover:text-emerald-500 transition-colors font-medium">Inicio</a>
+                <a href="#servicios" class="text-slate-600 hover:text-emerald-500 transition-colors font-medium">Servicios</a>
+                <a href="#proceso" class="text-slate-600 hover:text-emerald-500 transition-colors font-medium">Mi Proceso</a>
+                <a href="#nosotros" class="text-slate-600 hover:text-emerald-500 transition-colors font-medium">Sobre Mí</a>
+            </nav>
+            <a href="#contacto" class="hidden md:block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-lg transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30">
+                Contactar
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="inicio" class="min-h-screen flex items-center pt-20 bg-white">
+            <div class="container mx-auto grid md:grid-cols-2 items-center gap-8">
+                <div class="px-6 text-center md:text-left fade-in-up hero-bg-pattern h-full flex flex-col justify-center py-12 md:py-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4">Soluciones Técnicas, Resultados Reales.</h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">Servicio técnico informático personal y dedicado. Diagnóstico, reparación y optimización para tus equipos en Luján de Cuyo.</p>
+                    <a href="#servicios" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 inline-block transform hover:scale-105">
+                        Ver mis servicios
+                    </a>
+                </div>
+                <div class="relative h-80 md:h-screen w-full fade-in-up" style="transition-delay: 200ms;">
+                    <!-- Imagen de fondo -->
+                    <div class="absolute inset-0 bg-cover bg-center rounded-md" style="background-image: url('imagenes/portada1.png');"></div>
+                    <!-- Capa oscura para mejorar contraste -->
+                    <div class="absolute inset-0 bg-slate-900/40 rounded-md"></div>
+                    <!-- Contenedor del logo superpuesto -->
+                    <div class="absolute inset-0 flex items-center justify-center p-8">
+                        <div class="text-center opacity-80" style="mix-blend-mode: screen;">
+                            <!-- Logo SVG -->
+                            <svg class="w-24 h-24 md:w-32 md:h-32 text-emerald-400 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                            <!-- Nombre -->
+                            <span class="text-4xl md:text-5xl font-extrabold text-white tracking-widest mt-4 block">Luján<span class="text-emerald-400">Tech</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl font-bold text-slate-900">Mis Servicios</h2>
+                    <p class="text-slate-600 mt-2 text-lg">Soluciones a medida para cada problema informático.</p>
+                    <div class="inline-block w-24 h-1 bg-amber-400 rounded mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta de Servicio -->
+                    <div class="bg-white p-8 rounded-xl shadow-md service-card fade-in-up">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sistemas Operativos</h3>
+                        <p class="text-slate-600">Instalación y optimización de Windows y Linux. Tu equipo como nuevo, rápido y seguro.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio -->
+                    <div class="bg-white p-8 rounded-xl shadow-md service-card fade-in-up" style="transition-delay: 100ms;">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Backups y Respaldo</h3>
+                        <p class="text-slate-600">Protejo tu información valiosa con copias de seguridad automáticas y manuales.</p>
+                    </div>
+                     <!-- Tarjeta de Servicio -->
+                    <div class="bg-white p-8 rounded-xl shadow-md service-card fade-in-up" style="transition-delay: 200ms;">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10 10 0 0114.142 0M1.394 9.393a15 15 0 0121.213 0" /></svg></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Redes y Conectividad</h3>
+                        <p class="text-slate-600">Configuro tu red Wi-Fi y routers para una conexión perfecta en cada rincón.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proceso -->
+        <section id="proceso" class="py-24 bg-white">
+             <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl font-bold text-slate-900">Mi Proceso de Trabajo</h2>
+                    <p class="text-slate-600 mt-2 text-lg">Simple, transparente y efectivo.</p>
+                    <div class="inline-block w-24 h-1 bg-amber-400 rounded mt-4"></div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Paso 1 -->
+                    <div class="fade-in-up">
+                        <div class="mx-auto h-24 w-24 flex items-center justify-center bg-emerald-500 text-white text-3xl font-bold rounded-full border-4 border-white shadow-lg">1</div>
+                        <h3 class="font-bold text-xl text-slate-800 mt-6 mb-2">Contacto</h3>
+                        <p class="text-slate-600 px-4">Me contás tu problema por WhatsApp o formulario.</p>
+                    </div>
+                     <!-- Paso 2 -->
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                         <div class="mx-auto h-24 w-24 flex items-center justify-center bg-emerald-500 text-white text-3xl font-bold rounded-full border-4 border-white shadow-lg">2</div>
+                        <h3 class="font-bold text-xl text-slate-800 mt-6 mb-2">Diagnóstico</h3>
+                        <p class="text-slate-600 px-4">Analizo la situación y te presento un presupuesto claro.</p>
+                    </div>
+                     <!-- Paso 3 -->
+                    <div class="fade-in-up" style="transition-delay: 400ms;">
+                         <div class="mx-auto h-24 w-24 flex items-center justify-center bg-emerald-500 text-white text-3xl font-bold rounded-full border-4 border-white shadow-lg">3</div>
+                        <h3 class="font-bold text-xl text-slate-800 mt-6 mb-2">Solución</h3>
+                        <p class="text-slate-600 px-4">Aplico la solución de forma eficiente para que vuelvas a trabajar.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="nosotros" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="relative md:w-1/2 w-full h-96 rounded-xl overflow-hidden shadow-xl fade-in-up">
+                        <!-- Imagen de fondo -->
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('imagenes/lujantechvideo.gif');"></div>
+                        <!-- Capa oscura para mejorar contraste -->
+                        <div class="absolute inset-0 bg-slate-900/40"></div>
+                        <!-- Contenedor del logo superpuesto -->
+                        <div class="absolute inset-0 flex items-center justify-center p-8">
+                            <div class="text-center opacity-70" style="mix-blend-mode: screen;">
+                                <!-- Logo SVG (ligeramente más pequeño) -->
+                                <svg class="w-20 h-20 md:w-24 md:h-24 text-emerald-400 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                                </svg>
+                                <!-- Nombre (ligeramente más pequeño) -->
+                                <span class="text-3xl md:text-4xl font-extrabold text-white tracking-widest mt-3 block">Luján<span class="text-emerald-400">Tech</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 fade-in-up" style="transition-delay: 200ms;">
+                        <h2 class="text-4xl font-bold text-slate-900 mb-4">Un profesional de confianza a tu lado</h2>
+                        <p class="text-slate-600 mb-6 text-lg">Mi pasión es la tecnología y mi objetivo es que la tuya funcione sin problemas. Ofrezco un servicio personal, honesto y enfocado en darte la mejor solución, no la más cara.</p>
+                        <div class="border-l-4 border-amber-400 pl-4">
+                            <p class="text-slate-600 italic">"La calidad en un servicio o producto no es lo que tú pones en él. Es lo que el cliente obtiene de él." - Peter Drucker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-4xl font-bold text-slate-900">Contactame</h2>
+                    <p class="text-slate-600 mt-2 text-lg">Estoy listo para resolver tus dudas y problemas técnicos.</p>
+                    <div class="inline-block w-24 h-1 bg-amber-400 rounded mt-4"></div>
+                </div>
+                <div class="max-w-2xl mx-auto bg-slate-50 rounded-xl shadow-lg p-8 lg:p-12 fade-in-up">
+                    <form id="contact-form" action="https://formspree.io/f/nicomau@gmail.com" method="POST">
+                        <div class="mb-5">
+                            <label for="name" class="block text-slate-700 font-semibold mb-2">Nombre</label>
+                            <input type="text" name="name" id="name" placeholder="Tu nombre" class="w-full bg-white border border-slate-300 rounded-lg py-3 px-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                        </div>
+                         <div class="mb-5">
+                            <label for="email" class="block text-slate-700 font-semibold mb-2">Correo Electrónico</label>
+                            <input type="email" name="email" id="email" placeholder="tu@email.com" class="w-full bg-white border border-slate-300 rounded-lg py-3 px-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-slate-700 font-semibold mb-2">Mensaje</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Describí tu problema o consulta..." class="w-full bg-white border border-slate-300 rounded-lg py-3 px-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-12 rounded-lg text-lg transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30">
+                                Enviar Consulta
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status" class="text-center mt-6 h-6"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-8">
+        <div class="container mx-auto px-6 text-center text-slate-400">
+            <p>&copy; 2025 LujánTech. Creado con pasión por la tecnología.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5492613315566" target="_blank" class="whatsapp-float flex items-center justify-center" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.1-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.134-.38-.232z"/>
+        </svg>
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observers = [];
+            const sliders = document.querySelectorAll('.fade-in-up');
+
+            sliders.forEach((slider, index) => {
+                const appearOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                };
+
+                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    });
+                }, appearOptions);
+
+                appearOnScroll.observe(slider);
+                observers.push(appearOnScroll);
+            });
+
+            // Script para el formulario de contacto con Formspree
+            const form = document.getElementById('contact-form');
+            const statusDiv = document.getElementById('form-status');
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                const data = new FormData(event.target);
+                statusDiv.innerHTML = '<span class="text-emerald-600">Enviando...</span>';
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        statusDiv.innerHTML = "¡Gracias! Tu mensaje fue enviado con éxito.";
+                        statusDiv.className = 'text-emerald-600 font-semibold';
+                        form.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                statusDiv.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                statusDiv.innerHTML = "Hubo un error al enviar el formulario.";
+                            }
+                            statusDiv.className = 'text-red-600 font-semibold';
+                        })
+                    }
+                }).catch(error => {
+                    statusDiv.innerHTML = "Hubo un error al enviar el formulario.";
+                    statusDiv.className = 'text-red-600 font-semibold';
+                });
+            }
+            form.addEventListener("submit", handleSubmit);
+        });
+    </script>
+</body>
+</html>
