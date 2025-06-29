@@ -93,7 +93,7 @@
                 </svg>
                 <span class="text-2xl font-bold text-white">Luján<span class="text-emerald-400">Tech</span></span>
             </a>
-            <!-- Navegación -->
+            <!-- Navegación Desktop -->
             <nav class="hidden md:flex space-x-8">
                 <a href="#inicio" class="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Inicio</a>
                 <a href="#servicios" class="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Servicios</a>
@@ -102,6 +102,25 @@
             </nav>
             <a href="#contacto" class="hidden md:block primary-button font-bold py-2.5 px-5 rounded-lg">
                 Contactar
+            </a>
+            <!-- Botón Hamburguesa para Móvil -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-300 hover:text-emerald-400 focus:outline-none">
+                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#inicio" class="block text-center py-3 text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition-colors">Inicio</a>
+            <a href="#servicios" class="block text-center py-3 text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition-colors">Servicios</a>
+            <a href="#proceso" class="block text-center py-3 text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition-colors">Mi Proceso</a>
+            <a href="#nosotros" class="block text-center py-3 text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition-colors">Sobre Mí</a>
+            <a href="#contacto" class="block text-center py-4 px-6 text-slate-300">
+                <span class="primary-button font-bold py-2.5 px-5 rounded-lg w-full inline-block">Contactar</span>
             </a>
         </div>
     </header>
@@ -269,7 +288,9 @@
     <!-- Footer -->
     <footer class="bg-slate-900 border-t border-slate-800 py-8">
         <div class="container mx-auto px-6 text-center text-slate-400">
-            <p>&copy; 2025 LujánTech. Luján de Cuyo - Mendoza. Cel: 2613315566</p>
+            <p class="mb-2">LujánTech - Soporte Técnico Informático en Luján de Cuyo, Mendoza.</p>
+            <p class="mb-2">Servicio para Vistalba, Chacras de Coria, Mayor Drummond y alrededores. Cel: 2613315566</p>
+            <p>&copy; 2025 LujánTech. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -282,6 +303,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Animaciones de scroll
             const observers = [];
             const sliders = document.querySelectorAll('.fade-in-up');
 
@@ -340,6 +362,26 @@
                 });
             }
             form.addEventListener("submit", handleSubmit);
+
+            // ---> INICIO: CÓDIGO PARA MENÚ MÓVIL <---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            if (menuBtn && mobileMenu) {
+                // Alternar visibilidad del menú
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Opcional: Cerrar el menú al hacer clic en un enlace
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+            // ---> FIN: CÓDIGO PARA MENÚ MÓVIL <---
         });
     </script>
 </body>
